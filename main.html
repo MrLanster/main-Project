@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Frame with Text and Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #EDE8F5;
+            overflow-x: hidden;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #3D52A0;
+            padding: 2px 5px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 40px;  
+            height: auto; 
+            margin-bottom: 1px;
+        }
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+        .logo-text {
+            font-size: 12px;
+        }
+        .menu-button {
+            background-color: #ADBBDA;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .menu-button:hover {
+            background-color: #0056b3;
+        }
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 150px; 
+            position: fixed; /* Fixed position */
+            top: 95px; /* Adjusted position to be lower */
+            left: 20px; 
+            background-color: #3D52A0;
+            border-radius: 5px;
+            padding: 5px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10; /* Ensure it's above other content */
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 3px;
+            margin: 2px 0; 
+            border-radius: 5px;
+            width: 100%;
+            text-align: left;
+        }
+        .nav-link:hover {
+            background-color: #7091E6;
+        }
+        .video-container {
+            text-align: center;
+            margin-top: 40px; /* Increased spacing */
+            margin-bottom: 20px;
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+        .text-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #7091E6;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        #text-container {
+            max-width: 400px; 
+            margin: 0 auto;
+        }
+        .button {
+            padding: 5px 10px;
+            margin: 0 5px;
+            border: none;
+            background-color: #ADBBDA;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="menu-button" onclick="toggleMenu()">Menu</button>
+        <div class="logo-container">
+            <img src="your-logo.png" alt="Logo" class="logo">
+            <h1 class="logo-text">ALORA</h1>
+        </div>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#logout" class="nav-link">Logout</a>
+    </div>
+
+    <div class="video-container">
+        <video controls>
+            <source src="your-video-file.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div id="text-container">
+        <div class="text-item">
+            <button class="button">Left</button>
+            <span>BASE</span>
+            <button class="button">Right</button>
+        </div>
+        <div class="text-item">
+            <button class="button">Left</button>
+            <span>SHOULDER</span>
+            <button class="button">Right</button>
+        </div>
+        <div class="text-item">
+            <button class="button">Left</button>
+            <span>ELBOW</span>
+            <button class="button">Right</button>
+        </div>
+        <div class="text-item">
+            <button class="button">Left</button>
+            <span>WRIST</span>
+            <button class="button">Right</button>
+        </div>
+        <div class="text-item">
+            <button class="button">OPEN</button>
+            <span>FINGERS</span>
+            <button class="button">CLOSE</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>
